@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<style>
+    
+        #Leapyear {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,108,1) 13%, rgba(0,212,255,1) 100%);
+            border-color: aquamarine;
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: 5px 10px aquamarine;
+            }
+
+ 
+</style>
+<script>
+var yr, temp;
+function fun()
+{
+  yr = parseInt(document.getElementById("year").value);
+  if(yr)
+  {
+    temp = document.getElementById("resPara");
+    temp.style.display = "block";
+    if((yr%4==0) && (yr%100!=0))
+      document.getElementById("res").innerHTML = "a Leap";
+    else if(yr%400==0)
+      document.getElementById("res").innerHTML = "a Leap";
+    else
+      document.getElementById("res").innerHTML = "not a Leap";
+  }
+}
+</script>
+</head>
+<center>
+<body>
+<div id="Leapyear">
+<p>Enter the Year: <input id="year">
+<br>
+<br>
+<button onclick="fun()">Check</button></p>
+<p id="resPara" style="display:none;">It is <span id="res"></span> Year</p>
+</div>
+</body>
+</html>
